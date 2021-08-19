@@ -2,7 +2,7 @@
 using DevExpress.Xpf.Core;
 using System.Collections.ObjectModel;
 using System.Windows;
-using TraceUI.Model;
+
 
 namespace TraceUI.ViewModel
 {

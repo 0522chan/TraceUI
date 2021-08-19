@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TraceUI.Model
 {
-    class Model
+    public class Model
     {
         public double TimeStamp { get; set; }
         public string StartOfFrame { get; set; }
@@ -18,4 +18,5 @@ namespace TraceUI.Model
         public int DLC { get; set; }
         public byte Data { get; set; }
     }
+    
 }

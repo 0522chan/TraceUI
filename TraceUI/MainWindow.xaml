@@ -13,14 +13,15 @@
     </dx:ThemedWindow.DataContext>
     <Grid>
 
-        <TreeView>
-            <TreeViewItem Header="PASS">
-                <TreeViewItem Header="NAME"/>
-            </TreeViewItem>
-            <TreeViewItem Header="STOP">
-                <TreeViewItem Header="NAME"/>
-            </TreeViewItem>
-        </TreeView>
+        <dxg:GridControl AutoGenerateColumns="AddNew" 
+                 EnableSmartColumnsGeneration="True" >
+            <dxg:GridControl.View>
+                <dxg:TreeListView AllowDragDrop="True" DragRecordOver="OnDragRecordOver" 
+                    Name="treeListView" AutoWidth="True"
+                          KeyFieldName="ID" ParentFieldName="ParentID"
+                          TreeDerivationMode="Selfreference"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
 
         <dxg:GridControl AutoGenerateColumns="AddNew" 
                      EnableSmartColumnsGeneration="True" 
