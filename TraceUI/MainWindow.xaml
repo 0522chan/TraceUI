@@ -1,0 +1,38 @@
+﻿<dx:ThemedWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+    
+    x:Class="TraceUI.MainWindow"
+    xmlns:local="clr-namespace:TraceUI.ViewModel"
+    Title="Trace Monitor" Height="675" Width="1084.504">
+    
+    <dx:ThemedWindow.DataContext>
+        <local:ViewModel/>
+    </dx:ThemedWindow.DataContext>
+    <Grid>
+
+        <TreeView>
+            <TreeViewItem Header="PASS">
+                <TreeViewItem Header="NAME"/>
+            </TreeViewItem>
+            <TreeViewItem Header="STOP">
+                <TreeViewItem Header="NAME"/>
+            </TreeViewItem>
+        </TreeView>
+
+        <dxg:GridControl AutoGenerateColumns="AddNew" 
+                     EnableSmartColumnsGeneration="True" 
+                     HorizontalAlignment="Right" 
+                     VerticalAlignment="Top"
+                     ItemsSource="{Binding SampleDatas}">
+            <dxg:GridControl.View>
+                <dxg:TableView AllowDragDrop="True" DragRecordOver="OnDragRecordOver"
+                               ShowTotalSummary="True" Width="661" Height="634" RenderTransformOrigin="0.649,0.698"/>
+                
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+
+</dx:ThemedWindow>
